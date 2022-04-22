@@ -10,15 +10,6 @@
         android:name="com.example.sonder_restaurant.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_favouritesFragment"
-            app:destination="@id/favouritesFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
