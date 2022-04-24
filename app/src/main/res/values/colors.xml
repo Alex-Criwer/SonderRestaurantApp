@@ -10,4 +10,5 @@
     <color name="sonder_white">#F5F5F8</color>
     <color name="sonder_orange">#FA4A0C</color>
     <color name="sonder_grey_icons">#ADADAF</color>
+    <color name="sonder_search">#EFEEEE</color>
 </resources>

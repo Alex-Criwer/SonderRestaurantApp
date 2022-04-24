@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btn_more_info_height">25dp</dimen>
+    <dimen name="guideline_horisontal_margin">22dp</dimen>
+    <dimen name="guideline_vertical_margin">55dp</dimen>
+    <dimen name="delicious_food_size">34dp</dimen>
+    <dimen name="delicious_food_margin">32dp</dimen>
+    <dimen name="search_margin">25dp</dimen>
+</resources>

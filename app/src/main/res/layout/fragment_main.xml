@@ -3,12 +3,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/sonder_white"
     tools:context=".MainFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_begin="@dimen/guideline_horisontal_margin"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintGuide_end="@dimen/guideline_horisontal_margin"
+                android:orientation="vertical"
+                />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="@dimen/guideline_vertical_margin"/>
+
+            <Button
+                android:id="@+id/btn_info"
+                android:layout_width="@dimen/btn_more_info_height"
+                android:layout_height="@dimen/btn_more_info_height"
+                android:background="@drawable/ic_more_info"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toTopOf="@id/guideline3"
+                />
+
+            <Button
+                android:id="@+id/btn_cart"
+                android:layout_width="@dimen/btn_more_info_height"
+                android:layout_height="@dimen/btn_more_info_height"
+                android:background="@drawable/ic_shopping_cart"
+                app:layout_constraintTop_toTopOf="@id/guideline3"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                />
+
+            <TextView
+                android:id="@+id/tv_delicious_food"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delicious_food_for_you"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintTop_toBottomOf="@id/btn_info"
+                android:fontFamily="@font/actor_regular"
+                android:textSize="@dimen/delicious_food_size"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/delicious_food_margin"
+                />
+            
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                app:layout_constraintStart_toEndOf="@id/guideline1"
+                app:layout_constraintEnd_toStartOf="@id/guideline2"
+                app:layout_constraintTop_toBottomOf="@id/tv_delicious_food"
+                android:background="@drawable/bg_search"
+                android:drawableStart="@drawable/ic_search"
+                android:hint="Search"
+                android:fontFamily="@font/actor_regular"
+                android:drawablePadding="20dp"
+                android:padding="20dp"
+                android:layout_marginTop="@dimen/search_margin"
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>
