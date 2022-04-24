@@ -7,4 +7,13 @@
         <item name="colorAccent">@color/teal_200</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="tab_text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/actor_regular</item>
+    </style>
+
+    <style name="roundedImageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

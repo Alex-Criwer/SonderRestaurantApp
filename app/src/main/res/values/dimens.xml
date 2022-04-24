@@ -6,4 +6,9 @@
     <dimen name="delicious_food_size">34dp</dimen>
     <dimen name="delicious_food_margin">32dp</dimen>
     <dimen name="search_margin">25dp</dimen>
+    <dimen name="tabs_margin">25dp</dimen>
+    <dimen name="round_image">164dp</dimen>
+    <dimen name="text_size_description">18sp</dimen>
+    <dimen name="margin_card_view">15dp</dimen>
+    <dimen name="text_size_price">11sp</dimen>
 </resources>
