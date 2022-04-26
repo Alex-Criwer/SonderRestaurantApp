@@ -1,8 +1,8 @@
-package com.example.sonder_restaurant
-
+package com.example.sonder_restaurant.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.sonder_restaurant.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
