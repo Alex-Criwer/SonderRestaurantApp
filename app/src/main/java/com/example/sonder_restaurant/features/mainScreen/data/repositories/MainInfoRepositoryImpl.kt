@@ -5,8 +5,8 @@ import com.example.sonder_restaurant.features.mainScreen.data.retrofit.MainApiSe
 import com.example.sonder_restaurant.features.mainScreen.data.retrofit.entities.MainInfoResponse
 import retrofit2.Response
 
-class MainInfoRepositoryImpl(val mainApiService: MainApiService): MainInfoRepository {
-    override suspend fun getMainInfo(): Response<MainInfoResponse> {
+class MainInfoRepositoryImpl(private val mainApiService: MainApiService): MainInfoRepository {
+    override suspend fun getFoodsMenuInfo(): Response<MainInfoResponse> {
         return mainApiService.getFoods()
     }
 }

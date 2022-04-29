@@ -4,5 +4,5 @@ import com.example.sonder_restaurant.features.mainScreen.data.retrofit.entities.
 import retrofit2.Response
 
 interface MainInfoRepository {
-    suspend fun getMainInfo(): Response<MainInfoResponse>
+    suspend fun getFoodsMenuInfo(): Response<MainInfoResponse>
 }

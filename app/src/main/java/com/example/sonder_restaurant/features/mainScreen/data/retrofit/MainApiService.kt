@@ -12,7 +12,7 @@ interface MainApiService {
     suspend fun getFoods(): Response<MainInfoResponse>
 
     companion object {
-        private const val BASE_URL = "https://hidden-sun-2260.getsandbox.com:443"
+        private const val BASE_URL = "https://hidden-sun-2260.getsandbox.com"
 
         fun create(): MainApiService {
             return Retrofit

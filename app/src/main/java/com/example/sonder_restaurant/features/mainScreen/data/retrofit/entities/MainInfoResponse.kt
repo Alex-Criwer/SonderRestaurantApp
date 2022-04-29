@@ -1,3 +1,3 @@
 package com.example.sonder_restaurant.features.mainScreen.data.retrofit.entities
 
-class MainInfoResponse: ArrayList<MenuItem>()
+data class MainInfoResponse(val foods: List<MenuItem>)

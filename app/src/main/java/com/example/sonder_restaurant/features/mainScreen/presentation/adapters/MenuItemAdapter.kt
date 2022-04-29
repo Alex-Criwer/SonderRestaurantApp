@@ -1,5 +1,6 @@
 package com.example.sonder_restaurant.features.mainScreen.presentation.adapters
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +12,10 @@ import com.example.sonder_restaurant.R
 import com.example.sonder_restaurant.features.mainScreen.data.retrofit.entities.MenuItem
 import de.hdodenhof.circleimageview.CircleImageView
 
-class MenuItemAdapter(private val dishes: List<MenuItem>):
+class MenuItemAdapter():
     RecyclerView.Adapter<MenuItemAdapter.MenuViewHolder>() {
+
+    private val _dishes: MutableList<MenuItem> = ArrayList()
 
     class MenuViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         private val dishRootLayout: CardView       = itemView.findViewById(R.id.cv_root_dish_layout)
@@ -25,9 +28,16 @@ class MenuItemAdapter(private val dishes: List<MenuItem>):
                  .load(dish.picture)
                  .into(dishImageView)
             dishNameTextView.text = dish.dish_name
-            dishPrice.text = String.format(itemView.context.getString(R.string.app_name),
+            dishPrice.text = String.format(itemView.context.getString(R.string.dish_price),
                                            dish.price.toString())
         }
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun initData(dishes: List<MenuItem>) {
+        _dishes.clear()
+        _dishes.addAll(dishes)
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
@@ -37,9 +47,9 @@ class MenuItemAdapter(private val dishes: List<MenuItem>):
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
-        holder.bind(dishes[position])
+        holder.bind(_dishes[position])
     }
 
-    override fun getItemCount() = dishes.size
+    override fun getItemCount() = _dishes.size
 
 }
