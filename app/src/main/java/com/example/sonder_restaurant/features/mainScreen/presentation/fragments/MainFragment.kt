@@ -19,7 +19,6 @@ import com.example.sonder_restaurant.features.mainScreen.presentation.adapters.M
 import com.google.android.material.tabs.TabLayout
 
 
-
 class MainFragment : Fragment() {
 
     private lateinit var mainInfoBtn: Button

@@ -139,6 +139,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:orientation="horizontal"
                 tools:listitem="@layout/item_recucler_view"
+                android:layout_marginTop="@dimen/rv_foods_margin"
+                android:layout_marginBottom="@dimen/rv_foods_margin"
                 tools:itemCount="2"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
