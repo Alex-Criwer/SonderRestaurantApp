@@ -19,7 +19,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <fragment
-        android:id="@+id/fragmentContainerView"
+        android:id="@+id/fragmentNavView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
