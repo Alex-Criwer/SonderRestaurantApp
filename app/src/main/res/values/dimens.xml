@@ -9,9 +9,12 @@
     <dimen name="tabs_margin">25dp</dimen>
     <dimen name="round_image">140dp</dimen>
     <dimen name="text_size_description">18sp</dimen>
+    <dimen name="text_size_description_detail">28sp</dimen>
     <dimen name="margin_card_view">15dp</dimen>
     <dimen name="text_size_price">11sp</dimen>
     <dimen name="rv_foods_margin">11sp</dimen>
     <dimen name="back_arrow_size">24dp</dimen>
     <dimen name="like_icon">20dp</dimen>
+    <dimen name="round_image_detail_screen">240dp</dimen>
+    <dimen name="guideline_details_screen">43dp</dimen>
 </resources>

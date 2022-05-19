@@ -4,4 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="delicious_food_for_you">Delicious \nfood for you</string>
     <string name="dish_price">%s rub</string>
+    <string name="omposition_of_the_dish">Сomposition of the dish:</string>
+    <string name="add_to_card">Add to card</string>
 </resources>
