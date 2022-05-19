@@ -12,12 +12,12 @@ import com.example.sonder_restaurant.R
 import com.example.sonder_restaurant.features.mainScreen.data.retrofit.entities.MenuItem
 import de.hdodenhof.circleimageview.CircleImageView
 
-class MenuItemAdapter():
+class MenuItemAdapter(private val onItemClick: () -> Unit):
     RecyclerView.Adapter<MenuItemAdapter.MenuViewHolder>() {
 
     private val _dishes: MutableList<MenuItem> = ArrayList()
 
-    class MenuViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    class MenuViewHolder(itemView: View, onItemClick: () -> Unit): RecyclerView.ViewHolder(itemView) {
         private val dishRootLayout: CardView       = itemView.findViewById(R.id.cv_root_dish_layout)
         private val dishImageView: CircleImageView = itemView.findViewById(R.id.iv_picture_of_dish)
         private val dishNameTextView: TextView     = itemView.findViewById(R.id.tv_name_of_dish)
@@ -31,6 +31,12 @@ class MenuItemAdapter():
             dishPrice.text = String.format(itemView.context.getString(R.string.dish_price),
                                            dish.price.toString())
         }
+
+        init {
+            dishRootLayout.setOnClickListener {
+                onItemClick.invoke()
+            }
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -43,7 +49,7 @@ class MenuItemAdapter():
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
         val itemView = LayoutInflater.from(parent.context)
                                      .inflate(R.layout.item_recucler_view, parent, false)
-        return MenuViewHolder(itemView)
+        return MenuViewHolder(itemView, onItemClick)
     }
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {

@@ -33,7 +33,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.sonder_restaurant.detailFragment"
+        android:name="com.example.sonder_restaurant.features.detailsScreen.presentation.fragments.detailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" />
 </navigation>

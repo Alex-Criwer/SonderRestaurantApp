@@ -1,5 +1,6 @@
 package com.example.sonder_restaurant.features.mainScreen.presentation.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,18 +16,19 @@ import com.example.sonder_restaurant.R
 import com.example.sonder_restaurant.features.mainScreen.domain.MainViewMadelFactory
 import com.example.sonder_restaurant.features.mainScreen.domain.MainViewModel
 import com.example.sonder_restaurant.features.mainScreen.presentation.adapters.MenuItemAdapter
+import com.example.sonder_restaurant.helpers.FragmentClickListener
 import com.google.android.material.tabs.TabLayout
 
 
 class MainFragment : Fragment() {
-
     private lateinit var mainInfoBtn: Button
     private lateinit var cartBtn: Button
     private lateinit var searchEditText: EditText
     private lateinit var menuTabLayout: TabLayout
     private lateinit var rvFoods: RecyclerView
-    private var adapterMenuFoods = MenuItemAdapter()
+    private lateinit var adapterMenuFoods: MenuItemAdapter
     private lateinit var mainViewModel: MainViewModel
+    private var fragmentClickListener: FragmentClickListener? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +55,10 @@ class MainFragment : Fragment() {
     }
 
     private fun initRv() {
+        adapterMenuFoods = MenuItemAdapter {
+            fragmentClickListener?.onOpenDetailMenuItemClickListener()
+        }
+
         rvFoods.apply {
             adapter = adapterMenuFoods
             layoutManager = LinearLayoutManager(context)
@@ -65,5 +71,17 @@ class MainFragment : Fragment() {
 
     private fun loadData() {
         mainViewModel.getFoodsInfo()
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is FragmentClickListener) {
+            fragmentClickListener = context
+        }
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        fragmentClickListener = null
     }
 }

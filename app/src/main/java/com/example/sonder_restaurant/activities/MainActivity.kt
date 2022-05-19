@@ -1,6 +1,7 @@
 package com.example.sonder_restaurant.activities
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -28,5 +29,10 @@ class MainActivity : AppCompatActivity(), FragmentClickListener {
 
     override fun onOpenDetailMenuItemClickListener() {
         navController.navigate(R.id.detailFragment)
+        bottomNavigationView.visibility = View.GONE
+    }
+
+    override fun onBackFragmentClick() {
+        TODO("Not yet implemented")
     }
 }

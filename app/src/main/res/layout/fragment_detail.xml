@@ -1,140 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.core.widget.NestedScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/up_constraint"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/up_constraint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+            <Button
+                android:id="@+id/btn_back_detail_fragment"
+                android:layout_width="@dimen/back_arrow_size"
+                android:layout_height="@dimen/back_arrow_size"
+                android:background="@drawable/ic_back_arrow"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                >
-                <Button
-                    android:id="@+id/btn_back_detail_fragment"
-                    android:layout_width="@dimen/back_arrow_size"
-                    android:layout_height="@dimen/back_arrow_size"
-                    android:background="@drawable/ic_back_arrow"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginStart="41dp"/>
-
-                <Button
-                    android:id="@+id/btn_likes_dish"
-                    android:layout_width="@dimen/like_icon"
-                    android:layout_height="@dimen/like_icon"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="60dp"
-                    android:layout_marginEnd="41dp"
-                    android:background="@drawable/ic_likes"
-                />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv_picture_of_dish_detail"
-                android:layout_width="@dimen/round_image_detail_screen"
-                android:layout_height="@dimen/round_image_detail_screen"
-                android:layout_gravity="center|top"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/up_constraint"
-                android:layout_marginTop="20dp"
-                tools:src="@tools:sample/avatars" />
-
-            <TextView
-                android:id="@+id/tv_name_of_dish_detail"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/actor_regular"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_picture_of_dish_detail"
-                android:textColor="@color/black"
-                android:textSize="@dimen/text_size_description_detail"
-                android:text="Veggie tomato mix"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/margin_card_view"/>
-
-            <TextView
-                android:id="@+id/tv_price_detail"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/actor_regular"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_name_of_dish_detail"
-                android:textColor="@color/sonder_orange"
-                android:textSize="22dp"
-                android:text="500 руб"
-                android:gravity="center"
-                android:layout_marginTop="@dimen/margin_card_view"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="@dimen/guideline_details_screen"/>
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="@dimen/guideline_details_screen"/>
-
-            <TextView
-                android:id="@+id/composition_dish_tmp"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/guideline_6"
-                app:layout_constraintEnd_toEndOf="@id/guideline_7"
-                app:layout_constraintTop_toBottomOf="@id/tv_price_detail"
-                android:layout_marginTop="@dimen/margin_card_view"
-                android:text="@string/omposition_of_the_dish"
-                android:textSize="17dp"
-                android:fontFamily="@font/actor_regular"
-                android:textColor="@color/black"
-                />
-
-            <TextView
-                android:id="@+id/composition_dish"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/guideline_6"
-                app:layout_constraintEnd_toEndOf="@id/guideline_7"
-                app:layout_constraintTop_toBottomOf="@id/composition_dish_tmp"
-                android:layout_marginTop="5dp"
-                android:text="Salad"
-                android:textSize="15dp"
-                android:fontFamily="@font/actor_regular"
-                />
+                android:layout_marginTop="60dp"
+                android:layout_marginStart="41dp"/>
 
             <Button
-                android:id="@+id/btn_add_dish_to_card"
-                android:layout_width="0dp"
-                android:layout_height="70dp"
-                android:background="@drawable/add_to_card"
-                android:text="@string/add_to_card"
-                android:textColor="@color/sonder_white"
-                app:layout_constraintTop_toBottomOf="@id/composition_dish"
-                app:layout_constraintEnd_toEndOf="@id/guideline_7"
-                app:layout_constraintStart_toEndOf="@id/guideline_6"
-                android:layout_marginTop="15dp"/>
-
+                android:id="@+id/btn_likes_dish"
+                android:layout_width="@dimen/like_icon"
+                android:layout_height="@dimen/like_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="41dp"
+                android:background="@drawable/ic_likes"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
 
-</FrameLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_picture_of_dish_detail"
+            android:layout_width="@dimen/round_image_detail_screen"
+            android:layout_height="@dimen/round_image_detail_screen"
+            android:layout_gravity="center|top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/up_constraint"
+            android:layout_marginTop="20dp"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_name_of_dish_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/actor_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_picture_of_dish_detail"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_description_detail"
+            android:text="Veggie tomato mix"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_card_view"/>
+
+        <TextView
+            android:id="@+id/tv_price_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/actor_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_of_dish_detail"
+            android:textColor="@color/sonder_orange"
+            android:textSize="22dp"
+            android:text="500 руб"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/margin_card_view"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/guideline_details_screen"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/guideline_details_screen"/>
+
+        <TextView
+            android:id="@+id/composition_dish_tmp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/guideline_6"
+            app:layout_constraintEnd_toEndOf="@id/guideline_7"
+            app:layout_constraintTop_toBottomOf="@id/tv_price_detail"
+            android:layout_marginTop="@dimen/margin_card_view"
+            android:text="@string/omposition_of_the_dish"
+            android:textSize="17dp"
+            android:fontFamily="@font/actor_regular"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/composition_dish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/guideline_6"
+            app:layout_constraintEnd_toEndOf="@id/guideline_7"
+            app:layout_constraintTop_toBottomOf="@id/composition_dish_tmp"
+            android:layout_marginTop="5dp"
+            android:text="Salad"
+            android:textSize="15dp"
+            android:fontFamily="@font/actor_regular"
+            />
+
+        <Button
+            android:id="@+id/btn_add_dish_to_card"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:background="@drawable/add_to_card"
+            android:text="@string/add_to_card"
+            android:textColor="@color/sonder_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline_7"
+            app:layout_constraintStart_toEndOf="@id/guideline_6"
+            android:layout_marginBottom="32dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
