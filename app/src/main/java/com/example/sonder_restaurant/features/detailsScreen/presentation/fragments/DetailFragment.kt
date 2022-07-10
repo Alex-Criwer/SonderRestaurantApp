@@ -39,5 +39,4 @@ class detailFragment : Fragment() {
         dishPrice = view.findViewById(R.id.tv_price_detail)
         dishComposition = view.findViewById(R.id.composition_dish)
     }
-
 }
